@@ -1,101 +1,21 @@
-# Project Name: Which Bollywood Celebrity You look like
-
-A Deep learning based streamlit web app which can tell with which bollywood celebrity your face resembles.
-
-Face recognition is the problem of identifying and verifying people in a photograph by their face.
-It is a task that is trivially performed by humans, even under varying light and when faces are changed by age or obstructed with accessories and facial hair. Nevertheless, it is remained a challenging computer vision problem for decades until recently.
-
-Deep learning methods are able to leverage very large datasets of faces and learn rich and compact representations of faces, allowing modern models to first perform as-well and later to outperform the face recognition capabilities of humans.
-
-In this project, you will discover the problem of face recognition and how deep learning methods can achieve superhuman performance to identify similar faces.
-
-## Original repo:
-https://github.com/entbappy/Which-Bollywood-Celebrity-You-look-like
-
-## Demo Video:
-https://www.youtube.com/watch?v=lYSsLFgFzBk&list=PLkz_y24mlSJYI78C1IZJaghNvC7dh6red&index=6
-
-This is a methods of identifying similar faces check various aspects on pictures, including: face shape, nose, eyes and mouth; face position in the picture; skin color (including the lighting of the photo); color and hair and cosine_similarity.
-
-# Dataset has been used:
-https://www.kaggle.com/sushilyadav1998/bollywood-celeb-localized-face-dataset
+Face Matching Algorithm Using MTCNN
+The face matching algorithm leveraging MTCNN (Multi-task Cascaded Convolutional Neural Network) is a robust and efficient approach for face detection, alignment, and recognition. Here's a concise breakdown of its functionality:
 
 
-# Some Real Time Demo:
-
-Web app look
-
-<img src="demo/1.png" alt="workflow" width="70%">
-
-Lets check some of images
-
-<img src="demo/2.png" alt="workflow" width="70%">
-
-<img src="demo/3.png" alt="workflow" width="70%">
-
-This really performing good you can consider by seeing this result 😀
-
-<img src="demo/4.png" alt="workflow" width="70%">
-
-The fun part is I am looked like Riteish Deshmukh 😄😁
-
-<img src="demo/5.png" alt="workflow" width="70%">
-
-# STEPS to run this project:
-
-You can also use others images instead of bollywood actress
-
-## STEP 01: 
-Clone the repository
-
-```bash
-git clone https://github.com/entbappy/Which-Bollywood-Celebrity-You-look-like.git
-```
-
-## STEP 02: 
-Create an environment
+Face Detection:
+MTCNN identifies and extracts faces from an image or video frame. It uses a three-stage cascaded structure to detect faces of varying sizes with high accuracy.
 
 
-```bash
-conda create -n celebrity python=3.7 -y
-```
-
-## STEP 03: 
-Install the requirements
+Facial Landmark Localization:
+The algorithm pinpoints key facial landmarks (e.g., eyes, nose, mouth corners) to ensure precise alignment. This step is crucial for standardizing face orientation and improving recognition accuracy.
 
 
-```bash
-pip install -r requirements.txt
-```
-
-## STEP 04: 
-Download the data from the link and keep it in your project directory. Make sure all the actress folder should be in just one folder called data, like that
-
-<img src="demo/data.png" alt="workflow" width="70%">
-
-## STEP 05: 
-Just execute this command one time if you are not changing the data
+Face Alignment:
+Using the detected landmarks, MTCNN aligns the face by correcting its orientation (e.g., rotation or tilt). This ensures consistency across different images of the same individual.
 
 
-```bash
-python run.py
-```
-
-## STEP 06: 
-Now to start the webapp run the following command
+Feature Extraction and Matching:
+After alignment, the processed face is passed to a feature extraction model (e.g., FaceNet or similar). The extracted features are then compared using a similarity metric (e.g., cosine similarity or Euclidean distance) to determine if two faces match.
 
 
-```bash
-streamlit run app.py
-```
-
-yes!! Now you can start predicting 🙂
-
-# Authors:
-```bash
-Author: Bappy Ahmed
-Data Scientist
-Email: entbappy73@gmail.com
-```
-
-
+This algorithm is widely used in applications like identity verification, access control, and photo organization due to its speed, accuracy, and ability to handle variations in lighting, pose, and occlusion.
